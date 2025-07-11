@@ -1,4 +1,4 @@
-// How can you solve polynomial eqquaitions using linked list.
+// How can you solve polynomial equations using linked list.
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
