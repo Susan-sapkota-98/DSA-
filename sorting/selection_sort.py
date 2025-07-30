@@ -13,8 +13,6 @@ class selection:
         return self.data
 
 data_list= list(map(int, input("Enter numbers separated by space: ").split()))
-# Create object
 sorter = selection(data_list)
-# Call method
 result = sorter.selection_sort()
 print("Sorted list:", result)

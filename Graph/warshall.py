@@ -1,6 +1,6 @@
 # Warshall Algorithm gives us
 # Reachablility Matrix
-# Transitive CLousre
+# Transitive Clousre
 
 
 import math
@@ -18,7 +18,7 @@ def display(data):
     for row in data:
         print(row)
 
-def warshall_algo(W):
+def warshall_algorithm(W):
     n = len(W)
     D = W
     for k in range(0,n):
@@ -27,7 +27,7 @@ def warshall_algo(W):
                 D[i][j] = D[i][j] or (D[i][k] and D[k][j])
     return D
 
-ans = warshall_algo(W)    
+ans = warshall_algorithm(W)    
 display(ans)    
 
 

@@ -18,6 +18,7 @@ def initialize(G, s):
 
 # Relaxation function
 def relax(u, v, G, d, previous):
+    # d=cost distionary
     if d[v] > d[u] + G[u][v]:
         d[v] = d[u] + G[u][v]
         previous[v] = u
