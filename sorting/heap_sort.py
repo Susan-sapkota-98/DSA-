@@ -19,16 +19,15 @@ def max_heapify(arr, n, i):
 def heap_sort(arr):
     n = len(arr)
 
-    # Build a max heap
     for i in range(n // 2 - 1, -1, -1):
         max_heapify(arr, n, i)
 
-    # Extract elements from the heap one by one
     for i in range(n - 1, 0, -1):
         arr[i], arr[0] = arr[0], arr[i]  # Swap the root(maximum) with the last element
         max_heapify(arr, i, 0)  # Heapify the root of the tree
 
 
-arr = [4, 10, 3, 5, 1]
+arr = list(map(int, input("Enter numbers separated by space: ").split()))
+print("The array of list before sorting: ", arr)
 heap_sort(arr)
 print("Sorted array:", arr)
