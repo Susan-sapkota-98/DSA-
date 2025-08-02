@@ -12,10 +12,10 @@ def shell_sort(arr):
                 j-=gap
 
             arr[j]=temp
-        gap //=2
+        gap =gap // 2
 
 
-arr=[15,17,7,2,1,7,3,11]
+arr=[19,63,2,6,7,18,60,16,9,4]
 print("original array:", arr)
 shell_sort(arr)
 
