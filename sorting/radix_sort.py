@@ -20,6 +20,7 @@ def count_sort(arr, pos):
     for i in range(0,n):
         arr[i] = output[i]
 
+
 def radix_sort(arr):
     max_val = max(arr)
     #for unit place pos=1
@@ -27,7 +28,6 @@ def radix_sort(arr):
     while max_val // pos > 0:
         count_sort(arr, pos)
         pos *= 10
-
 
 arr = [157,15,7,20,1,72,333,111]
 print("The original array is:", arr)
