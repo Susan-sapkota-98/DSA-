@@ -10,6 +10,7 @@ struct node
     struct node *link;
 };
 
+// sorted order insertion function
 struct node *insert(struct node *head, float coeff, int expo)
 {
     struct node *temp = head;
@@ -48,12 +49,12 @@ struct node *insert(struct node *head, float coeff, int expo)
 
 struct node *create(struct node *head)
 {
-    int n, expo;
+    int n, expo, i;
     float coeff;
     printf("Enter number of terms: ");
     scanf("%d", &n);
 
-    for (int i = 1; i <= n; i++)
+    for (i = 1; i <= n; i++)
     {
         printf("Enter coefficient for term %d: ", i);
         scanf("%f", &coeff);
@@ -86,7 +87,6 @@ void display(struct node *head)
         printf("\n");
     }
 }
-
 
 float evaluate(struct node *head, float x)
 {

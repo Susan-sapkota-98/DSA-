@@ -1,3 +1,4 @@
+#How can you  solve the polynomial equations using Linked  List
 import math
 class Node:
     def __init__(self, coeff, expo):
@@ -55,14 +56,14 @@ class Polynomial:
         return result
 
 
-if __name__ == "__main__":
-    poly = Polynomial()
-    print("Enter the polynomial:")
-    poly.create()
 
-    print("The polynomial is: ")
-    poly.display()
+poly = Polynomial()
+print("Enter the polynomial:")
+poly.create()
 
-    x_val = float(input("Enter the value of x to evaluate: "))
-    result = poly.evaluate(x_val)
-    print(f"Result of polynomial when x = {x_val:.2f} is:\n {result:.2f}")
+print("The polynomial is: ")
+poly.display()
+
+x = float(input("Enter the value of x to evaluate: "))
+result = poly.evaluate(x)
+print(f"Result of polynomial when x = {x:.2f} is:\n {result:.2f}")
