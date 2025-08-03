@@ -22,7 +22,7 @@ struct Node *createNode(int key)
     node->key = key;
     node->left = NULL;
     node->right = NULL;
-    node->height = 1; // New node is initially at height 1
+    node->height = 1;
     return node;
 }
 
