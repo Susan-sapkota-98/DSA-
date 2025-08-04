@@ -1,5 +1,5 @@
 class Node:
-    def __init__(self, key):  # Fixed __init__
+    def __init__(self, key): 
         self.key = key
         self.left = None
         self.right = None
@@ -81,13 +81,12 @@ class AVLTree:
         self.preorder(root.right)
 
 
-if __name__ == "__main__":
-    avl = AVLTree()
-    root = None
+avl = AVLTree()
+root = None
 
-    values = [10, 20, 30, 40, 50, 25, 35, 15]
-    for val in values:
-        root = avl.insert(root, val)
+values = [10, 20, 30, 40, 50, 25, 35, 15]
+for val in values:
+    root = avl.insert(root, val)
 
-    print("Preorder Traversal of AVL Tree:")
-    avl.preorder(root)
+print("Preorder Traversal of AVL Tree:")
+avl.preorder(root)
