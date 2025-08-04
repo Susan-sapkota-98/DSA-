@@ -5,7 +5,6 @@ class Node:
         self.right = None
         self.height = 1
 
-
 class AVLTree:
     def get_height(self, node):
         if not node:
@@ -18,7 +17,7 @@ class AVLTree:
         return self.get_height(node.left) - self.get_height(node.right)
 
     # Right Rotate
-    def right_rotate(self, z):  # Renamed RR -> right_rotate
+    def right_rotate(self, z):  
         y = z.left
         T3 = y.right
 
@@ -31,7 +30,7 @@ class AVLTree:
         return y
 
     # Left Rotate
-    def left_rotate(self, z):  # Renamed LR -> left_rotate
+    def left_rotate(self, z):  
         y = z.right
         T2 = y.left
 
