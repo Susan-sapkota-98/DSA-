@@ -18,6 +18,8 @@ struct BinaryTree *create_node(int value)
     NewNode->parent = NULL;
     return NewNode;
 }
+
+// DLR(Data,Left,Right)
 void preorder(struct BinaryTree *root)
 {
     if (root != NULL)
@@ -27,6 +29,8 @@ void preorder(struct BinaryTree *root)
         preorder(root->right);
     }
 }
+
+// LDR(Left,Data,Right)
 void inorder(struct BinaryTree *root)
 {
     if (root != NULL)
@@ -36,6 +40,8 @@ void inorder(struct BinaryTree *root)
         inorder(root->right);
     }
 }
+
+// LRD(Left,Right,Data)
 void postorder(struct BinaryTree *root)
 {
     if (root != NULL)
@@ -100,7 +106,7 @@ struct BinaryTree *delete_node(struct BinaryTree *root, int value)
     }
     else
     {
-        // Case 1 and Case 2
+
         if (root->left == NULL)
         {
             struct BinaryTree *temp = root->right;
@@ -119,7 +125,7 @@ struct BinaryTree *delete_node(struct BinaryTree *root, int value)
         }
         else
         {
-            // Case 3
+
             struct BinaryTree *temp = find_min(root->right);
             root->data = temp->data;
             root->right = delete_node(root->right, temp->data);
@@ -162,7 +168,7 @@ int main()
             scanf("%d", &element);
             temp = search(root, element);
             if (temp == NULL)
-                printf("%d NOT FOUND!!\n", element);
+                printf("%d NOT FOUND!\n", element);
             else
                 printf("%d FOUND!\n", element);
             break;
