@@ -30,7 +30,7 @@ class AVLTree:
         return y
 
     # Left Rotate
-    def left_rotate(self, z):  
+    def LR(self, z):  
         y = z.right
         T2 = y.left
 
@@ -55,7 +55,7 @@ class AVLTree:
         root.height = 1 + max(self.get_height(root.left), self.get_height(root.right))
         balance = self.get_balance(root)
 
-        # Balance the tree
+       
         if balance > 1 and key < root.left.key:
             return self.right_rotate(root)
 
