@@ -29,7 +29,7 @@ def radix_sort(arr):
         count_sort(arr, pos)
         pos *= 10
 
-arr = [157,15,7,20,1,72,333,111]
+arr = [157,15,7,20,1,72,333,111,605,225]
 print("The original array is:", arr)
 radix_sort(arr)
 print("The Sorted array is:", arr)
