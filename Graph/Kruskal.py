@@ -35,6 +35,6 @@ for weight, x, y in edges:
         union(x, y)
         mst.append((x, y, weight))
         total_weight +=weight
-        print(f"{x} - {y} : {weight}")
+        print(f"{x} - {y} :(weight : {weight}) ")
 
 print("The Total weight of MST :",total_weight)
