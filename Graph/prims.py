@@ -1,6 +1,3 @@
-import heapq  
-n = 5
-# Each list has (weight, neighbor) pairs
 graph = {
     0: [(2, 1), (3, 3)],
     1: [(2, 0), (1, 2), (4, 3)],
@@ -8,33 +5,43 @@ graph = {
     3: [(3, 0), (4, 1), (5, 2)],
     4: [(6, 2)]
 }
-visited = [0] * n
+n = 5
+def prims_algorithm(graph, n):
+    selected = [False] * n
+    key = [float('inf')] * n
+    parent = [-1] * n
 
-pq = []
-mst = []
-total_weight=0
+    key[0] = 0
 
-start_vertex = 0
-visited[start_vertex] = True
+    for _ in range(n):
+        min_key = float('inf')
+        u = -1
+        for v in range(n):
+            if not selected[v] and key[v] < min_key:
+                min_key = key[v]
+                u = v
 
-for edge in graph[start_vertex]:
-    heapq.heappush(pq, (edge[0], start_vertex, edge[1]))
+        if u == -1:  
+            break
+
+        selected[u] = True
+
+        for weight, ximeki in graph[u]:
+            if not selected[ximeki] and weight < key[ximeki]:
+                key[ximeki] = weight
+                parent[ximeki] = u
+
+    total_weight = 0
+    print("Minimum Spanning Tree:")
+    for i in range(1, n):
+        if parent[i] == -1:
+            continue
+        print(f"{parent[i]} - {i} (weight: {key[i]})")
+        total_weight += key[i]
+
+    print(f"Total weight of MST: {total_weight}")
 
 
-while len(mst) < n - 1 and pq:
-    weight, u, v = heapq.heappop(pq)
-    if not visited[v]:
-        visited[v] = True
-        mst.append((u, v, weight))
-        total_weight +=weight
-        for next_edge in graph[v]:
-            if not visited[next_edge[1]]:
-                heapq.heappush(pq, (next_edge[0], v, next_edge[1]))
 
 
-print("Minimum Spanning Tree:")
-for u, v, w in mst:
-    print(f"{u} - {v} (weight: {w})")
-
-print(f"The total weight of MST: {total_weight}")
-
+prims_algorithm(graph, n)
