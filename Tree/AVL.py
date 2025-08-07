@@ -30,7 +30,7 @@ class AVLTree:
         return y
 
     # Left Rotate
-    def LR(self, z):  
+    def left_rotate(self, z):  
         y = z.right
         T2 = y.left
 
@@ -71,13 +71,30 @@ class AVLTree:
             return self.left_rotate(root)
 
         return root
-
+# DLR
     def preorder(self, root):
         if not root:
             return
         print(root.key, end=' ')
         self.preorder(root.left)
         self.preorder(root.right)
+
+# LRD
+    def postorder(self, root):
+        if not root:
+            return
+        self.postorder(root.left)
+        self.postorder(root.right)
+        print(root.key, end=' ')
+        
+ # LDR
+    def inorder(self, root):
+        if not root:
+            return
+        self.inorder(root.left)
+        print(root.key, end=' ')  
+        self.inorder(root.right)
+       
 
 
 avl = AVLTree()
@@ -87,5 +104,14 @@ values = [10, 20, 30, 40, 50, 25, 35, 15]
 for val in values:
     root = avl.insert(root, val)
 
-print("Preorder Traversal of AVL Tree:")
+print("Preorder Traversal of AVL Tree:\n")
 avl.preorder(root)
+print("\n")
+
+print("inorder Traversal of AVL Tree:\n")
+avl.inorder(root)
+print("\n")
+
+print("Postorder Traversal of AVL Tree:\n")
+avl.postorder(root)
+print("\n")
