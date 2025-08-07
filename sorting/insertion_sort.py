@@ -5,7 +5,7 @@ def insertion_sort(lst):
         while prev >= 0 and lst[prev] > curr:
             lst[prev + 1] = lst[prev]
             prev -= 1
-            lst [prev + 1] = curr
+        lst [prev + 1] = curr
     return lst
 
 

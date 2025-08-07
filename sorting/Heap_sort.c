@@ -27,13 +27,12 @@ void maxHeapify(int A[], int n, int i)
 
 void heapSort(int A[], int n)
 {
-    // Build max heap
+
     for (int i = n / 2; i >= 1; i--)
     {
         maxHeapify(A, n, i);
     }
 
-    // Extract elements from heap
     for (int i = n; i >= 2; i--)
     {
         swap(&A[1], &A[i]);
@@ -43,7 +42,7 @@ void heapSort(int A[], int n)
 
 int main()
 {
-    int A[] = {0, 4, 10, 3, 5, 1}; // 1-based index; A[0] is dummy
+    int A[] = {0, 4, 10, 3, 5, 1}; 
     int n = 5;
 
     heapSort(A, n);
