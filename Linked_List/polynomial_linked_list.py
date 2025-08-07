@@ -8,7 +8,7 @@ class Node:
 
 class Polynomial:
     def __init__(self):
-        self.head = None
+        self.head = None 
 
     def insert(self, coeff, expo):
         new_node = Node(coeff, expo)

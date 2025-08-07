@@ -1,12 +1,10 @@
 def merge(arr, l, m, r):
-    # Create left and right subarrays
     left = arr[l:m+1]
     right = arr[m+1:r+1]
 
-    i = j = 0  # Pointers for left and right
-    k = l      # Pointer for merged array
+    i = j = 0  
+    k = l      
 
-    # Merge left and right into arr
     while i < len(left) and j < len(right):
         if left[i] <= right[j]:
             arr[k] = left[i]
@@ -16,13 +14,11 @@ def merge(arr, l, m, r):
             j += 1
         k += 1
 
-    # Copy remaining elements of left, if any
     while i < len(left):
         arr[k] = left[i]
         i += 1
         k += 1
 
-    # Copy remaining elements of right, if any
     while j < len(right):
         arr[k] = right[j]
         j += 1
@@ -31,11 +27,10 @@ def merge(arr, l, m, r):
 def merge_sort(arr, l, r):
     if l < r:
         m = (l + r) // 2
-        merge_sort(arr, l, m)
-        merge_sort(arr, m + 1, r)
-        merge(arr, l, m, r)
+        merge_sort(arr, l, m)  #sort left half
+        merge_sort(arr, m + 1, r) #sort right half
+        merge(arr, l, m, r) #Merge the halves
 
-# Example usage
 arr = [38, 27, 43, 3, 9, 82, 10]
 print("Original array:", arr)
 merge_sort(arr, 0, len(arr) - 1)
